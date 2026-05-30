@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Eman ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4,#ffdde1);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow-x:hidden;
+    color:white;
+}
+
+.container{
+    max-width:800px;
+    margin:20px;
+    text-align:center;
+}
+
+.card{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 8px 32px rgba(0,0,0,0.2);
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+p{
+    line-height:1.8;
+    font-size:1.1rem;
+    margin-bottom:15px;
+}
+
+.signature{
+    margin-top:25px;
+    font-size:1.2rem;
+}
+
+.ps{
+    margin-top:20px;
+    font-style:italic;
+}
+
+.click-text{
+    margin-top:20px;
+    font-size:1.1rem;
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%{opacity:1;}
+    50%{opacity:.4;}
+    100%{opacity:1;}
+}
+
+.heart{
+    position:fixed;
+    top:-10px;
+    color:white;
+    animation:fall linear infinite;
+    pointer-events:none;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
+    }
+}
+
+button{
+    margin-top:25px;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    font-size:1rem;
+    cursor:pointer;
+    background:white;
+}
+
+.hidden{
+    display:none;
+}
+</style>
+</head>
+<body onclick="startMusic()">
+
+<audio id="song" loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+    <div class="card">
+
+        <h1>🎂 Happy Birthday, My Love ❤️</h1>
+
+        <p>
+            To the most amazing girl in the world,
+        </p>
+
+        <p>
+            Today is all about celebrating you—the beautiful, kind, funny,
+            and incredible person who makes my life better every single day.
+        </p>
+
+        <p>
+            Thank you for all the smiles, laughs, memories, and love you've
+            given me. No matter where life takes us, one thing I'll always
+            be grateful for is having you by my side.
+        </p>
+
+        <p>
+            You make ordinary days feel special, and you make me happier
+            than you'll ever know.
+        </p>
+
+        <p>
+            I hope your birthday is filled with happiness, love, and
+            everything that makes you smile, because you deserve nothing less.
+        </p>
+
+        <p>
+            💖 I love you today.<br>
+            💖 I love you tomorrow.<br>
+            💖 I love you on every day after that.
+        </p>
+
+        <h2 style="margin-top:20px;">
+            Happy Birthday, Eman, My Princess 👑❤️✨
+        </h2>
+
+        <div class="signature">
+            Forever yours,<br><br>
+            <strong>Mohammad ❤️</strong><br>
+            Your ShayShay 💕
+        </div>
+
+        <div class="ps">
+            P.S. Thank you for being my favorite person, my biggest blessing,
+            and the best part of every day. I can't wait to make more memories
+            with you. Happy Birthday, my love. 🥰🎂
+        </div>
+
+        <button onclick="showLoveLetter()">
+            💌 Open Your Surprise
+        </button>
+
+        <div id="loveLetter" class="hidden" style="margin-top:20px;">
+            <p>
+                My beautiful Eman ❤️<br><br>
+
+                If I could give you one thing in life, it would be the ability
+                to see yourself through my eyes. Then you would know how truly
+                special you are to me. Thank you for being my happiness, my
+                comfort, and my favorite person in the world.
+
+                No matter how much time passes, I will always cherish every
+                moment we spend together. You make my life brighter just by
+                being in it.
+
+                I love you more than words can ever explain. ❤️
+            </p>
+        </div>
+
+        <div class="click-text">
+            🎵 Click anywhere on the page to start the music 🎵
+        </div>
+
+    </div>
+</div>
+
+<script>
+let started = false;
+
+function startMusic() {
+    if (!started) {
+        document.getElementById("song").play().catch(() => {});
+        started = true;
+    }
+}
+
+function showLoveLetter() {
+    document.getElementById("loveLetter").classList.remove("hidden");
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    heart.style.animationDuration = (Math.random() * 5 + 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 10000);
+}
+
+setInterval(createHeart, 400);
+</script>
+
+</body>
+</html>
